@@ -5,6 +5,7 @@ import SmallCard from "@/components/SmallCard";
 import MediumCard from "@/components/MediumCard";
 import LargeCard from "@/components/LargeCard";
 import Footer from "@/components/Footer";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function Home({ exploreData, cardsData }) {
   return (
@@ -20,7 +21,7 @@ export default function Home({ exploreData, cardsData }) {
           <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {exploreData.map(({ img, distance, location }) => (
-              <SmallCard img={img} distance={distance} location={location} />
+              <SmallCard key={img} img={img} distance={distance} location={location} />
             ))}
           </div>
         </section>
