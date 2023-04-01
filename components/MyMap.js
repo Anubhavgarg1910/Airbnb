@@ -4,7 +4,6 @@ import { getCenter } from "geolib";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 function MyMap({ searchResults }) {
-  const [showPopup, setShowPopup] = React.useState(true);
   const [selectedLocation, setSelectedLocation] = React.useState({});
   const coordinates = searchResults.map((result) => ({
     latitude: result.lat,
@@ -60,16 +59,6 @@ function MyMap({ searchResults }) {
           ) : (
             false
           )}
-
-          {/* {showPopup && (
-            <Popup
-              longitude={result.long}
-              latitude={result.lat}
-              onClose={() => setShowPopup(false)}
-            >
-              {result.title}
-            </Popup>
-          )} */}
         </div>
       ))}
     </Map>
