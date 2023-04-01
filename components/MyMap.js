@@ -1,7 +1,7 @@
 import * as React from "react";
 import Map, { Popup, Marker } from "react-map-gl";
 import { getCenter } from "geolib";
-import 'mapbox-gl/dist/mapbox-gl.css';
+import "mapbox-gl/dist/mapbox-gl.css";
 
 function MyMap({ searchResults }) {
   const [showPopup, setShowPopup] = React.useState(true);
@@ -48,18 +48,18 @@ function MyMap({ searchResults }) {
             </p>
           </Marker>
 
-          {/* {selectedLocation.long === result.long && (
-            <Popup 
-            onClose={ () => setSelectedLocation({}) }
-            closeOnClick ={true}
-            latitude={result.lat}
-            longitude={result.long}
-
-             >
-
+          {selectedLocation.long === result.long ? (
+            <Popup
+              onClose={() => setSelectedLocation({})}
+              closeOnClick={false}
+              longitude={result.long}
+              latitude={result.lat}
+            >
               {result.title}
-              </Popup>
-          ) } */}
+            </Popup>
+          ) : (
+            false
+          )}
 
           {/* {showPopup && (
             <Popup
@@ -67,7 +67,7 @@ function MyMap({ searchResults }) {
               latitude={result.lat}
               onClose={() => setShowPopup(false)}
             >
-              {result.title}{" "}
+              {result.title}
             </Popup>
           )} */}
         </div>
