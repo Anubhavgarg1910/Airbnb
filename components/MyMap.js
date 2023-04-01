@@ -1,7 +1,7 @@
 import * as React from "react";
 import Map, { Popup, Marker } from "react-map-gl";
 import { getCenter } from "geolib";
-import Image from "next/legacy/image";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function MyMap({ searchResults }) {
   const [showPopup, setShowPopup] = React.useState(true);
